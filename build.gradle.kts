@@ -37,7 +37,6 @@ tasks.withType<Test> {
 }
 
 tasks.test {
-    dependsOn(tasks.pitest)
     finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
 }
 tasks.jacocoTestReport {

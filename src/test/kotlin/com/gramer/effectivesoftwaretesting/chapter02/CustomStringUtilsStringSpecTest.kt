@@ -2,8 +2,6 @@ package com.gramer.effectivesoftwaretesting.chapter02
 
 import com.gramer.effectivesoftwaretesting.chapter02.CustomStringUtils.Companion.substringsBetween
 import io.kotest.core.spec.style.FreeSpec
-import io.kotest.core.spec.style.FunSpec
-import io.kotest.core.spec.style.StringSpec
 import io.kotest.data.forAll
 import io.kotest.data.headers
 import io.kotest.data.row
@@ -34,7 +32,7 @@ class CustomStringUtilsStringSpecTest : FreeSpec({
             row("a", "a", "b", null),
             row("a", "b", "a", null),
             row("a", "b", "b", null),
-            row("a", "a", "a", null)
+            row("a", "a", "a", null),
         ).forAll { str, open, close, expected ->
             "[str: $str, open:$open, close:$close] is $expected" {
                 substringsBetween(str, open, close) shouldBe expected
@@ -85,5 +83,4 @@ class CustomStringUtilsStringSpecTest : FreeSpec({
             substringsBetween("a abb ddc ca abbcc", "a a", "c c") shouldBe arrayOf("bb dd")
         }
     }
-
 })
