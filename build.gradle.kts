@@ -16,7 +16,7 @@ repositories {
     mavenCentral()
 }
 
-val kotestVersion = "5.5.5"
+val kotestVersion = "5.6.1"
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
