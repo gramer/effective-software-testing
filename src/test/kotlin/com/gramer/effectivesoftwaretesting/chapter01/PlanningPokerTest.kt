@@ -29,8 +29,8 @@ class PlanningPokerTest : FunSpec({
         planningPoker.identifyExtremes(
             listOf(
                 Estimate("zeno", 10),
-                Estimate("frank", 5)
-            )
+                Estimate("frank", 5),
+            ),
         ).shouldContainInOrder("frank", "zeno")
     }
 
@@ -39,8 +39,8 @@ class PlanningPokerTest : FunSpec({
             listOf(
                 Estimate("zeno", 10),
                 Estimate("frank", 5),
-                Estimate("baba", 3)
-            )
+                Estimate("baba", 3),
+            ),
         ).shouldContainInOrder("baba", "zeno")
     }
 
@@ -49,7 +49,7 @@ class PlanningPokerTest : FunSpec({
             val list = listOf(
                 Estimate("zeno", 1),
                 Estimate("baba", 100),
-                randoEstimate
+                randoEstimate,
             ).shuffled()
 
             planningPoker.identifyExtremes(list).shouldContainInOrder("zeno", "baba")
